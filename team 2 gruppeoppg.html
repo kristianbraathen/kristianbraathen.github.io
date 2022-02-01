@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Oppgave uke 4 Team 2</title>
+    <style>
+
+        img {
+				max-width: 20vh;
+				max-height: 20vh;
+				cursor: pointer;
+                float: left;
+				width: 100%;
+			}
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div id ="app"></div>
+
+    <script>
+    
+    //model
+    
+    let saks = 0;
+    let papir = 1;
+    let stein = 2;
+    let computerChoice = null;
+    let userChoice;
+        
+    //View
+    
+            Show();
+			function Show() {
+				const html = document.getElementById("app");
+				app.innerHTML = ` 
+                
+                <h2> Team Oppgave </h2>
+                <img src= "https://bit.ly/3Ghb0RQ" onclick="generateComputerChoice()"${stein}>
+                <img src= "https://bit.ly/3gexpoh" onclick="generateComputerChoice()"${saks}>
+                <img src= "https://bit.ly/3HfxELr" onclick="generateComputerChoice()"${papir}>
+                <div ${computerChoice} ${userChoice}></div>
+                `;
+                
+            }
+
+
+
+
+
+           //Controller
+           function generateComputerChoice() {
+                const randomNumber = Math.floor(Math.random() * 3) + 1
+
+                if (randomNumber === 1) {
+                    computerChoice = 'stein'
+                }
+                if (randomNumber === 2) {
+                    computerChoice = 'saks'
+                }
+                if (randomNumber === 3) {
+                    computerChoice = 'papir'
+                }
+                computerChoiceDisplay.innerHTML = computerChoice
+                show();
+        }
+
+        function getResult() {
+            if (computerChoice === userChoice) {
+                result = 'Uavgjort!'
+            }
+            if (computerChoice === 'stein' && userChoice === 'papir') {
+                result = 'Du vant!'
+            }
+            if (computerChoice === 'stein' && userChoice === 'saks') {
+                result = 'Du taper!'
+            }
+            if (computerChoice === 'papir' && userChoice === 'saks') {
+                result = 'Du Vant!'
+            }           
+            if (computerChoice === 'papir' && userChoice === 'stein') {
+                result = 'Du vant!'
+            }
+            if (computerChoice === 'saks' && userChoice === 'papir') {
+                result = 'Du taper!'
+            }
+            if (computerChoice === 'saks' && userChoice === 'stein') {
+                result = 'Du vant!'
+            }         
+            resultDisplay.innerHTML = result;
+            show();
+            
+        }
+</script>
+
+
+</body>
+</html>
