@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Oppgave uke 4 Team 2</title>
+    <style>
+
+        img {
+				max-width: 20vh;
+				max-height: 20vh;
+				cursor: pointer;
+                float: left;
+                width: 100%;
+                
+			}
+
+        body {
+            background-color:#3a3b3c;
+            color: whitesmoke;
+        }
+        h2{
+            text-shadow:
+          -1px -1px 0 #000,
+           0   -1px 0 #000,
+           1px -1px 0 #000,
+           1px  0   0 #000,
+           1px  1px 0 #000,
+           0    1px 0 #000,
+          -1px  1px 0 #000,
+          -1px  0   0 #000;
+        }
+        #chuck{
+            max-width: 50vh;
+            max-height: 50vh;
+            float: center;
+            width: 100%;
+        }
+
+        
+    </style>
+
+
+</head>
+<body>
+    
+    <div id ="app"></div>
+
+    <script>
+    
+    //model
+    
+    let computerChoice = "";
+    let userChoice = "";
+    let result = "";
+   
+    //View
+    
+			function show() {
+				document.getElementById("app").innerHTML = ` 
+                
+                <h2> Team Oppgave </h2>
+                <div class="valgt">
+                <img class="valgt "id="rock" src= "https://bit.ly/3Ghb0RQ" onclick="klikk('rock')"></img>
+                <img class="valgt "id="scissors" src= "https://bit.ly/3gexpoh" onclick="klikk('scissor')"></img>
+                <img class="valgt" id="paper" src= "https://bit.ly/3HfxELr" onclick="klikk('paper')"></img>
+                </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <h2> Du har valgt: <span id="user-choice">${userChoice}</span> </h2>
+                <h2> Datamaskinen har valgt: <span id="computer-choice">${computerChoice}</span> </h2>
+                <h2> Hvem vant: <span id="result">${result}</span> </h2>
+            
+                `;
+                
+            }
+           show();
+
+
+
+
+
+           //Controller
+            function klikk(e){
+            userChoice = e;
+            computerChoice = "";
+            result = "";
+            generateComputerChoice();
+            getResult();
+            show();
+            }
+
+
+
+
+           function generateComputerChoice() {
+                const randomNumber = Math.floor(Math.random() * 3 + 1);
+
+                if (randomNumber === 1) {
+                    computerChoice = 'rock'
+                } else if (randomNumber === 2) {
+                    computerChoice = 'paper'
+                } else if (randomNumber === 3) {
+                    computerChoice = 'scissor'
+                }
+                show();
+        }
+
+        function getResult() {
+            if (computerChoice === userChoice) {
+                result = '<br>UAVGJORT:( <img id="chuck" src="https://bit.ly/3L6EOEs">'
+            }
+            if (computerChoice === 'rock' && userChoice === 'paper') {
+                result = '<br><img id="chuck" src="https://bit.ly/3ro6Y5T">'
+            }
+            if (computerChoice === 'rock' && userChoice === 'scissor') {
+                result = '<br><img id="chuck" src="https://bit.ly/3gmyQ3T"'
+            }
+            if (computerChoice === 'paper' && userChoice === 'scissor') {
+                result = '<br><img id="chuck" src="https://bit.ly/3J2UG9c">'
+            }
+            if (computerChoice === 'scissor' && userChoice === 'paper') {
+                result = '<br><img id="chuck" src="https://bit.ly/3gmyQ3T"'
+            }
+            if (computerChoice === 'scissor' && userChoice === 'rock') {
+                result = '<br><img id="chuck" src="https://bit.ly/35ATX0e">'
+            }
+            if (computerChoice === 'paper' && userChoice === 'rock') {
+                result = '<br><img id="chuck" src="https://bit.ly/3gmyQ3T"'
+            }
+            //show();
+            
+        }
+</script>
+
+
+</body>
+</html>
