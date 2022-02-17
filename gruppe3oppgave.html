@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Oppgave uke 7 Gruppe 3</title>
+</head>
+<style>
+
+    .minLyd{
+        border-radius: 100%;
+        border: 5px solid black;
+        padding: 75px 75px;
+        float: left;
+        font-size: 150%;
+    } 
+    .minLyd:nth-child(3n+1){
+        clear: left;
+    }
+    body {
+        background: #444;
+    }
+    .first0{
+     background-color: #20B2AA;
+     color: #191970;
+    }
+    .first1{
+     background-color: lightslategrey;
+     color: lightskyblue;
+    }
+    .first2{
+     background-color: lightcoral ;
+     color: lightgreen
+    }
+    .first3{
+     background-color: rgb(221, 179, 140);
+     color: rgb(90, 66, 43);
+    }
+    .first4{
+     background-color: lightgreen;
+     color: lightcoral;
+    }
+    .first5{
+     background-color: lightskyblue;
+     color: lightgreen;
+    }
+
+</style>
+<body>
+
+    <div id="app"></div>
+
+<script>
+
+    //model
+
+    const SOUNDS = ['https://bigsoundbank.com/UPLOAD/mp3/0119.mp3',
+                    'https://bigsoundbank.com/UPLOAD/mp3/0167.mp3',
+                    'https://bigsoundbank.com/UPLOAD/mp3/0211.mp3',
+                    'https://bigsoundbank.com/UPLOAD/mp3/0111.mp3',
+                    'https://bigsoundbank.com/UPLOAD/mp3/0201.mp3',
+                    'https://bigsoundbank.com/UPLOAD/mp3/0006.mp3'];
+
+
+    ///const STYLE = ['1','2','3','4','5','6'];
+
+
+
+    //view
+
+        showApp();
+        function showApp() {
+
+            let html = ``;
+            let appDiv = document.getElementById('app');
+            
+            for (let index = 0; index < SOUNDS.length; index++) {
+
+            //let first = index % 3 == 0 ? 'first' :''; 
+            html += `<button href="#" class = "minLyd first${index}" id='' onclick="makeSound(${[index]})"> BANG! </button>`;
+
+            }
+
+            appDiv.innerHTML = html; 
+        }
+
+
+    //controller
+
+        function makeSound(index) {
+
+            const music = new Audio(SOUNDS[index]);
+            music.play();
+        }
+    
+        //Message Gruppe 3 uke 7
+</script>
+</body>
+</html>
