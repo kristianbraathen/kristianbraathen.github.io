@@ -8,23 +8,23 @@ const model = {
      fruits:[
         {
             symbol: 'Bell',
-            sValue: 10,
+            sValue: 25,
             sImg:'standard-slot-machine-symbolbells.jpg'
 
         },
         {
             symbol: 'Mellon',
-            sValue: 5,
+            sValue: 10,
             sImg:'standard-slot-machine-symbolmelons.jpg'
         },
         {
             symbol:'Orange',
-            sValue: 15,
+            sValue: 5,
             sImg:'standard-slot-machine-symbolorang%20(2).jpg'
         },
         {
             symbol:'Grape',
-            sValue: 25,
+            sValue: 15,
             sImg:'standard-slot-machine-symbolsgrape.jpg'
         },
         {
