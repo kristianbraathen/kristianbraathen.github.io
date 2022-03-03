@@ -26,13 +26,13 @@ function winner(givenScore){
     if(model.slots[0] === model.slots[1] && model.slots[0] === model.slots[2]){
       model.Score += givenScore;
       alert('Du vant')
-      let lyd= new Audio('https://bigsoundbank.com/UPLOAD/mp3/2482.mp3');
+      let lyd= new Audio('./lyd/Ta-da-orchestra-fanfare.mp3');
       lyd.play();
-      
-      
+      let lyd2 = new Audio('https://bigsoundbank.com/UPLOAD/mp3/2482.mp3');
+      lyd2.play();
     } else { console.log('ikke gevinst')
   }
-  
+
 }
 function scoretoCred(){
   model.Credits += model.Score; 
@@ -41,4 +41,3 @@ show();
 }
 
 
-// credits = score > score 0
