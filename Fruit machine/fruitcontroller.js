@@ -25,7 +25,7 @@ show();
 function winner(givenScore){
     if(model.slots[0] === model.slots[1] && model.slots[0] === model.slots[2]){
       model.Score += givenScore;
-      alert('Du vant')
+      //alert('Du vant')
       let lyd= new Audio('./lyd/Ta-da-orchestra-fanfare.mp3');
       lyd.play();
       let lyd2 = new Audio('https://bigsoundbank.com/UPLOAD/mp3/2482.mp3');
